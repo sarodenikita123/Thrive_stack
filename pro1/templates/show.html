@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show page</title>
+</head>
+<body>
+        <form method="post">
+            {{%csrf_token%}}
+            {form.as_p}
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Context</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {for obj in obj}
+                        <td>{{obj.id}}</td>
+                        <td>{{obj.title}}</td>
+                        <td>{{obj.context}}</td>
+                        <td>
+                            <button>update</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+</body>
+</html>
